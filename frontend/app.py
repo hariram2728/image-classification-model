@@ -156,7 +156,7 @@ if uploaded_file is not None:
 
                     # Ensure confidence is a percentage (0-100) if backend returns 0-1
                     if isinstance(confidence_score, float) and confidence_score <= 1.0:
-                    confidence_score = round(confidence_score * 100, 2)
+                        confidence_score = round(confidence_score * 100, 2)
 
                     st.markdown(f"""
                     <div class="prediction-box">
