@@ -150,15 +150,22 @@ if uploaded_file is not None:
                 if response.status_code == 200:
                     result = response.json()
                     
-                    # Display main prediction
+                    # Handle different possible key names from backend
+                    prediction_label = result.get('prediction') or result.get('label', 'Unknown')
+                    confidence_score = result.get('confidence') or result.get('probability', 0)
+
+                    # Ensure confidence is a percentage (0-100) if backend returns 0-1
+                    if isinstance(confidence_score, float) and confidence_score <= 1.0:
+                    confidence_score = round(confidence_score * 100, 2)
+
                     st.markdown(f"""
                     <div class="prediction-box">
-                        <h3 style="margin: 0;">Prediction: {result['prediction']}</h3>
-                        <p style="margin: 10px 0; color: #666;">Confidence Score</p>
-                        <div class="confidence-bar">
-                            <div class="confidence-fill" style="width: {result['confidence']}%;"></div>
-                        </div>
-                        <p style="text-align: right; font-weight: bold; color: #4CAF50;">{result['confidence']}%</p>
+                    <h3 style="margin: 0;">Prediction: {prediction_label}</h3>
+                    <p style="margin: 10px 0; color: #666;">Confidence Score</p>
+                    <div class="confidence-bar">
+                    <div class="confidence-fill" style="width: {confidence_score}%;"></div>
+                    </div>
+                    <p style="text-align: right; font-weight: bold; color: #4CAF50;">{confidence_score}%</p>
                     </div>
                     """, unsafe_allow_html=True)
                     
