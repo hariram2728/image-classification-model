@@ -1,0 +1,37 @@
+[flake8]
+max-line-length = 100
+extend-ignore = E203, W503
+exclude =
+    .git,
+    __pycache__,
+    build,
+    dist,
+    .venv,
+    venv,
+    env,
+    .eggs,
+    *.egg-info,
+    data,
+    models,
+    mlruns,
+    notebooks/.ipynb_checkpoints
+per-file-ignores =
+    __init__.py:F401
+    src/__init__.py:F401
+    src/data/__init__.py:F401
+    src/models/__init__.py:F401
+    src/models/architectures/__init__.py:F401
+    src/training/__init__.py:F401
+    src/evaluation/__init__.py:F401
+    src/explainability/__init__.py:F401
+    src/inference/__init__.py:F401
+    src/utils/__init__.py:F401
+    api/__init__.py:F401
+    api/routes/__init__.py:F401
+    api/schemas/__init__.py:F401
+    api/core/__init__.py:F401
+    tests/*:S101,D103
+max-complexity = 10
+count = True
+show-source = True
+statistics = True

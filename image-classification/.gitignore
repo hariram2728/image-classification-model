@@ -1,0 +1,136 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# pytest
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# Data
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+data/augmented/*
+!data/augmented/.gitkeep
+*.parquet
+*.feather
+
+# Models
+models/
+*.pth
+*.pt
+*.onnx
+*.h5
+*.pb
+*.tflite
+saved_models/
+checkpoints/
+*.bin
+
+# Logs
+*.log
+logs/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# MLflow
+mlruns/
+mlflow_runs/
+
+# DVC
+.dvc/
+**/.dvc/tmp/
+**/.dvc/cache
+
+# AWS
+.aws/
+credentials
+
+# Kubernetes secrets
+*.secret.yaml
+*-secret.yaml
+
+# Terraform
+*.tfstate
+*.tfstate.lock
+*.tfplan
+.terraform/
+
+# Docker
+docker-compose.override.yml
+
+# Documentation
+docs/_build/
+site/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Test coverage
+coverage.xml
+*.cover
+
+# Profiling
+*.prof
+*.pstats
+
+# Distributed training
+*.ncclDebug

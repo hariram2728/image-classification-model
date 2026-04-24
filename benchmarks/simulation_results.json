@@ -1,0 +1,22 @@
+{
+  "simulation_timestamp": "2026-04-21 07:39:15",
+  "baseline": {
+    "avg_latency_ms": 157.74647259049382,
+    "p95_latency_ms": 192.79822320593055,
+    "p99_latency_ms": 529.6167298709735,
+    "throughput_rps": 40.240206019324546,
+    "memory_mb": 8192.0
+  },
+  "optimized": {
+    "avg_latency_ms": 47.147686812517705,
+    "p95_latency_ms": 57.65675087539394,
+    "p99_latency_ms": 141.14182996311223,
+    "throughput_rps": 357.8388709586118,
+    "memory_mb": 3112.96
+  },
+  "improvements": {
+    "latency_reduction_pct": 70.11173306238548,
+    "throughput_increase_pct": 789.2570549633043,
+    "memory_reduction_pct": 62.0
+  }
+}

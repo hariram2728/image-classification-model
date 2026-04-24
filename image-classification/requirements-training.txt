@@ -1,0 +1,25 @@
+# Training-specific dependencies
+-r requirements.txt
+
+# Additional training utilities
+tensorboard>=2.13.0
+wandb>=0.15.0
+
+# Advanced augmentations
+kornia>=0.6.0
+
+# Mixed precision
+apex>=0.1.0
+
+# Learning rate finder
+torch-lr-finder>=0.2.1
+
+# Model pruning and quantization
+torch-pruning>=1.4.0
+
+# Hyperparameter optimization
+optuna>=3.3.0
+ray[tune]>=2.5.0
+
+# Dataset management
+datasets>=2.14.0
