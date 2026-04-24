@@ -143,4 +143,11 @@ async def predict(file: UploadFile = File(...)):
 
 @app.get("/health")
 async def health():
-    return {"status": "healthy", "model_loaded": model is not None, "device": DEVICE}
+    # Return 200 OK as long as the server is running, 
+    # regardless of model loading status
+    return {
+        "status": "healthy", 
+        "model_loaded": model is not None,
+        "device": DEVICE,
+        "message": "Server running" if model else "Model still loading..."
+    }
