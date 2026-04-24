@@ -113,8 +113,16 @@ if uploaded_file is not None:
     
     with col1:
         st.subheader("📷 Uploaded Image")
-        image = Image.open(uploaded_file)
-        st.image(image, use_container_width=True)
+        try:
+            # Reset pointer just in case
+            uploaded_file.seek(0)
+            image = Image.open(uploaded_file)
+            # Convert to RGB to handle potential RGBA/P issues
+            if image.mode != "RGB":
+                image = image.convert("RGB")
+            st.image(image, use_container_width=True)
+        except Exception as e:
+            st.error(f"Error loading image: {str(e)}")
         
         # Image details
         st.write(f"**Size:** {image.size[0]} x {image.size[1]} pixels")
