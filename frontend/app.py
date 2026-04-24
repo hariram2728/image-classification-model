@@ -120,7 +120,7 @@ if uploaded_file is not None:
             # Convert to RGB to handle potential RGBA/P issues
             if image.mode != "RGB":
                 image = image.convert("RGB")
-            st.image(image, use_column_width=True)  # Older parameter name
+            st.image(image, width=700)  # Or use: st.image(image, use_container_width=True) if still supported
         except Exception as e:
             st.error(f"Error loading image: {str(e)}")
         
